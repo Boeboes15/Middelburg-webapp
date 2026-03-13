@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import CartCounter from "./components/CartCounter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,13 +23,55 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <body
+  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+>
+
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "22px 40px",
+      borderBottom: "1px solid #ddd"
+    }}
+  >
+    <div style={{ fontWeight: "bold", fontSize: "22px" }}>
+      Middelburg Bearings
+    </div>
+
+    <div>
+      <a href="/" style={{ marginRight: "20px" }}>Home</a>
+
+      <a href="/products/bearings" style={{ marginRight: "20px" }}>
+        Products
+      </a>
+
+      <a
+        href="/cart"
+        style={{
+          background: "#2563eb",
+          color: "white",
+          padding: "8px 14px",
+          borderRadius: "6px",
+          textDecoration: "none"
+        }}
       >
-        {children}
-      </body>
+        🛒<CartCounter />
+      </a>
+    </div>
+  </div>
+
+  <div style={{ padding: "20px" }}>
+    {children}
+  </div>
+
+</body> 
     </html>
   );
 }
