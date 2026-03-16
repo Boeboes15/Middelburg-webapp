@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0b0b;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -23,4 +23,29 @@ body {
   background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Quote Form Fix */
+.quote-form input,
+.quote-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+}
+
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+  color: #aaa;
+}
+
+/* Quote Form Container */
+.quote-form {
+  background: #0b0b0b;
+  padding: 20px;
+  border-radius: 12px;
 }

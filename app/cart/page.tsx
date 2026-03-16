@@ -5,140 +5,142 @@ import { getCart, removeFromCart } from "../utils/cart";
 
 export default function CartPage() {
 
-const [cart, setCart] = useState<any[]>([]);
-const [name, setName] = useState("");
-const [phone, setPhone] = useState("");
-const [email, setEmail] = useState("");
-const [note, setNote] = useState("");
+  const [cart, setCart] = useState<any[]>([]);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [note, setNote] = useState("");
 
-useEffect(() => {
-setCart(getCart());
-}, []);
+  useEffect(() => {
+    setCart(getCart());
+  }, []);
 
-function handleRemove(code: string) {
-removeFromCart(code);
-setCart(getCart());
-}
+  function handleRemove(code: string) {
+    removeFromCart(code);
+    setCart(getCart());
+  }
 
-function handleQuote() {
+  function handleQuote() {
 
-if (!name) {
-alert("Please enter your Name or Company Name");
-return;
-}
+    if (!name) {
+      alert("Please enter your Name or Company Name");
+      return;
+    }
 
-if (!phone && !email) {
-alert("Please enter a Phone number or Email");
-return;
-}
+    if (!phone && !email) {
+      alert("Please enter a Phone number or Email");
+      return;
+    }
 
-const message = `NEW QUOTE REQUEST
+    const message = `NEW QUOTE REQUEST
 
 Name / Company: ${name}
 Phone: ${phone}
 Email: ${email}
 
 Products:
-${cart.map((item)=> `${item.code} - ${item.name}`).join("\n")}
+${cart.map((item) => `${item.code} - ${item.name}`).join("\n")}
 
 Note:
 ${note}
 `;
 
-const whatsappURL =
-`https://wa.me/27832711738?text=${encodeURIComponent(message)}`;
+    const whatsappURL =
+      "https://wa.me/27832711738?text=" + encodeURIComponent(message);
 
-window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank");
+  }
 
-}
+  return (
+    <div style={{ padding: "40px", maxWidth: "700px", margin: "auto" }}>
 
-return (
+      <h2>Quote Cart</h2>
 
-<div style={{padding:"40px",maxWidth:"700px",margin:"auto"}}>
+      {cart.length === 0 && <p>No items in quote cart.</p>}
 
-<h2>Quote Cart</h2>
+      {cart.map((item) => (
+        <div
+          key={item.code}
+          style={{
+            border: "1px solid #333",
+            borderRadius: "10px",
+            padding: "15px",
+            marginBottom: "15px",
+            background: "#111",
+          }}
+        >
+          <strong>{item.code}</strong>
+          <br />
+          {item.name}
 
-{cart.map((item:any)=>(
+          <br /><br />
 
-<div key={item.code}
-style={{
-border:"1px solid #ddd",
-padding:"15px",
-marginBottom:"10px",
-borderRadius:"6px"
-}}
->
+          <button
+            onClick={() => handleRemove(item.code)}
+            style={{
+              background: "red",
+              color: "white",
+              padding: "8px 14px",
+              border: "none",
+              borderRadius: "6px",
+            }}
+          >
+            Remove
+          </button>
+        </div>
+      ))}
 
-<strong>{item.code}</strong>
+      <hr style={{ margin: "30px 0" }} />
 
-<div>{item.name}</div>
+      <h2>Request Quote</h2>
 
-<button
-onClick={()=>handleRemove(item.code)}
-style={{
-marginTop:"10px",
-background:"#dc2626",
-color:"white",
-border:"none",
-padding:"6px 12px",
-borderRadius:"4px",
-cursor:"pointer"
-}}
+      <div className="quote-form">
 
->
+        <input
+          type="text"
+          placeholder="Name / Company Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-Remove </button>
+        <input
+          type="text"
+          placeholder="Phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
 
-</div>
-))}
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-<hr style={{margin:"30px 0"}}/>
+        <textarea
+          placeholder="Note (optional)"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        />
 
-<h3>Request Quote</h3>
+        <button
+          onClick={handleQuote}
+          style={{
+            background: "#2563eb",
+            color: "white",
+            padding: "14px",
+            border: "none",
+            borderRadius: "8px",
+            width: "100%",
+            fontWeight: "bold",
+            marginTop: "10px",
+          }}
+        >
+          Send Quote Request
+        </button>
 
-<input
-placeholder="Name / Company Name"
-value={name}
-onChange={(e)=>setName(e.target.value)}
-style={{display:"block",marginBottom:"10px",width:"100%",padding:"10px"}}
-/>
+      </div>
 
-<input
-placeholder="Phone"
-value={phone}
-onChange={(e)=>setPhone(e.target.value)}
-style={{display:"block",marginBottom:"10px",width:"100%",padding:"10px"}}
-/>
-
-<input
-placeholder="Email"
-value={email}
-onChange={(e)=>setEmail(e.target.value)}
-style={{display:"block",marginBottom:"10px",width:"100%",padding:"10px"}}
-/>
-
-<textarea
-placeholder="Note (optional)"
-value={note}
-onChange={(e)=>setNote(e.target.value)}
-style={{display:"block",marginBottom:"15px",width:"100%",padding:"10px"}}
-/>
-
-<button
-onClick={handleQuote}
-style={{
-background:"#2563eb",
-color:"white",
-border:"none",
-padding:"10px 20px",
-borderRadius:"6px",
-cursor:"pointer"
-}}
->
-Send Quote Request
-</button>
-
-</div>
-
-);
+    </div>
+  );
 }
