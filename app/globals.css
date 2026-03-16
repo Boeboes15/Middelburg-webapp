@@ -49,3 +49,17 @@ body {
   padding: 20px;
   border-radius: 12px;
 }
+
+/* Mobile Header Fix */
+@media (max-width: 768px) {
+
+  nav a {
+    display: none;
+  }
+
+  .quote-cart-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+}
