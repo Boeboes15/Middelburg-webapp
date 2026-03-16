@@ -92,3 +92,11 @@ body {
     display: none;
   }
 }
+
+/* Hide desktop menu links on phones */
+
+@media (max-width: 768px) {
+  .desktop-link {
+    display: none;
+  }
+}

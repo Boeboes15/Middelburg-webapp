@@ -49,10 +49,10 @@ export default function RootLayout({
     </div>
 
     <div className="desktop-menu">
-      <a href="/" style={{ marginRight: "20px" }}>Home</a>
-      <a href="/products/bearings" style={{ marginRight: "20px" }}>
-        Products
-      </a>
+   <a href="/" className="desktop-link" style={{ marginRight: "20px" }}>Home</a>
+<a href="/products/bearings" className="desktop-link" style={{ marginRight: "20px" }}>
+  Products
+</a>
 
       <a
         href="/cart"
