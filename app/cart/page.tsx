@@ -52,9 +52,16 @@ ${note}
   }
 
   return (
-    <div style={{ padding: "40px", maxWidth: "700px", margin: "auto" }}>
-
-      <h2>Quote Cart</h2>
+  <div
+  style={{
+    padding: "40px",
+    maxWidth: "700px",
+    margin: "auto",
+    background: "#000",
+    borderRadius: "12px"
+  }}
+>
+   <h2 style={{color:"#fff", marginBottom:"20px"}}>Quote Cart</h2>
 
       {cart.length === 0 && <p>No items in quote cart.</p>}
 
@@ -92,7 +99,7 @@ ${note}
 
       <hr style={{ margin: "30px 0" }} />
 
-      <h2>Request Quote</h2>
+<h2 style={{color:"#fff", marginTop:"30px", marginBottom:"20px"}}>Request Quote</h2>
 
       <div className="quote-form">
 
