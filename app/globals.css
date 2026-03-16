@@ -86,3 +86,9 @@ body {
   }
 
 }
+
+@media (max-width: 768px) {
+  .desktop-menu a {
+    display: none;
+  }
+}

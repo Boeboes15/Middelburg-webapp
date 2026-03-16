@@ -40,17 +40,16 @@ export default function RootLayout({
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      padding: "22px 40px",
+      padding: "16px 20px",
       borderBottom: "1px solid #ddd"
     }}
   >
-    <div style={{ fontWeight: "bold", fontSize: "22px" }}>
+    <div style={{ fontWeight: "bold", fontSize: "20px", whiteSpace: "nowrap" }}>
       Middelburg Bearings
     </div>
 
-    <div>
+    <div className="desktop-menu">
       <a href="/" style={{ marginRight: "20px" }}>Home</a>
-
       <a href="/products/bearings" style={{ marginRight: "20px" }}>
         Products
       </a>
