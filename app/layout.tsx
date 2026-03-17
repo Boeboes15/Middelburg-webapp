@@ -35,40 +35,49 @@ export default function RootLayout({
   className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 >
 
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "16px 20px",
-      borderBottom: "1px solid #ddd"
-    }}
-  >
-    <div style={{ fontWeight: "bold", fontSize: "20px", whiteSpace: "nowrap" }}>
-      Middelburg Bearings
-    </div>
+<div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "16px 20px",
+    borderBottom: "1px solid #ddd",
+  }}
+>
 
-  <div className="desktop-menu">
-  <a href="/" style={{ marginRight: "20px" }}>Home</a>
-  <a href="/products/bearings" style={{ marginRight: "20px" }}>
-    Products
-  </a>
-
-
-      <a
-        href="/cart"
-        style={{
-          background: "#2563eb",
-          color: "white",
-          padding: "8px 14px",
-          borderRadius: "6px",
-          textDecoration: "none"
-        }}
-      >
-        🛒<CartCounter />
-      </a>
-    </div>
+  {/* LEFT */}
+  <div style={{ fontWeight: "bold", fontSize: "18px" }}>
+    Middelburg Bearings
   </div>
+
+  {/* RIGHT */}
+  <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+
+    {/* Desktop menu only */}
+    <div className="desktop-menu">
+      <a href="/" style={{ marginRight: "15px" }}>Home</a>
+      <a href="/products/bearings">Products</a>
+    </div>
+
+    {/* Quote Cart */}
+    <a
+      href="/cart"
+      style={{
+        background: "#2563eb",
+        color: "white",
+        padding: "8px 14px",
+        borderRadius: "6px",
+        textDecoration: "none",
+        whiteSpace: "nowrap"
+      }}
+    >
+      <CartCounter />
+    </a>
+
+  </div>
+
+</div>
+
 
   <div style={{ padding: "20px" }}>
     {children}
