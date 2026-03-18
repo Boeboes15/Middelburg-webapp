@@ -36,17 +36,19 @@ export default function RootLayout({
 >
 
 <div
-  style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "16px 20px",
-    borderBottom: "1px solid #ddd",
-  }}
+ style={{
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "16px 20px",
+  borderBottom: "1px solid #333",
+  background: "#111",   // 👈 ADD THIS
+  color: "#fff"         // 👈 ADD THIS
+}}
 >
 
   {/* LEFT */}
-  <div style={{ fontWeight: "bold", fontSize: "18px" }}>
+ <div style={{ fontWeight: "bold", fontSize: "18px", color: "#fff" }}>
     Middelburg Bearings
   </div>
 
@@ -55,8 +57,8 @@ export default function RootLayout({
 
     {/* Desktop menu only */}
     <div className="desktop-menu">
-      <a href="/" style={{ marginRight: "15px" }}>Home</a>
-      <a href="/products/bearings">Products</a>
+      <a href="/" style={{ marginRight: "15px", color: "#fff" }}>Home</a>
+     <a href="/" style={{ marginRight: "15px", color: "#fff" }}>Home</a> 
     </div>
 
     {/* Quote Cart */}
