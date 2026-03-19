@@ -44,11 +44,15 @@ export default function ContactPage() {
 
         <p>
           🌐 Website:  
-          <a
-            href="https://www.middelburgbearingsandtransmission.com"
-            style={{ color: "#4da6ff", marginLeft: "6px" }}
-          >
-            middelburgbearingsandtransmission.com
+       <a
+  href="https://middelburgbearingsandtransmission.co.za"
+  style={{
+    color: "#3b82f6",
+    wordBreak: "break-word",     // 👈 THIS FIXES IT
+    overflowWrap: "break-word"   // 👈 EXTRA SAFE
+  }}
+>
+  middelburgbearingsandtransmission.co.za
           </a>
         </p>
 
