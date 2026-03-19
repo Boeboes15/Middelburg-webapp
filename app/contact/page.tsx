@@ -13,7 +13,7 @@ export default function ContactPage() {
       <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
 
         <h1 style={{ fontSize: "34px", marginBottom: "10px" }}>
-          Contact Us TEST
+          Contact Us
         </h1>
 
         <h2 style={{ marginBottom: "10px" }}>
@@ -45,14 +45,14 @@ export default function ContactPage() {
         <p>
           🌐 Website:  
        <a
-  href="https://middelburgbearingsandtransmission.co.za"
+  href="https://middelburgbearingsandtransmission.com"
   style={{
     color: "#3b82f6",
     wordBreak: "break-word",     // 👈 THIS FIXES IT
     overflowWrap: "break-word"   // 👈 EXTRA SAFE
   }}
 >
-  middelburgbearingsandtransmission.co.za
+  middelburgbearingsandtransmission.com
           </a>
         </p>
 
