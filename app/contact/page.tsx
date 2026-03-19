@@ -13,7 +13,7 @@ export default function ContactPage() {
       <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
 
         <h1 style={{ fontSize: "34px", marginBottom: "10px" }}>
-          Contact Us
+          Contact Us TEST
         </h1>
 
         <h2 style={{ marginBottom: "10px" }}>
